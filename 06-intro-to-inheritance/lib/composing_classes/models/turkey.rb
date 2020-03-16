@@ -1,0 +1,3 @@
+class Turkey
+
+end

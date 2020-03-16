@@ -1,0 +1,3 @@
+module Gobbleable
+  
+end
