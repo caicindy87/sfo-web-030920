@@ -1,3 +1,5 @@
-module Flyable # use the 'module' keyword to create a module
-  
+module Flyable # ability to fly
+  def fly
+    puts "I believe I can fly! I believe I can touch the sky!"
+  end
 end

@@ -1,6 +1,8 @@
 # Intro to Inheritance
 
 - Remember this lab? We can pass all the tests with less code!
+
+
 - When we see repetition, it's time to refactor to make our code more DRY
 - Inheritance through classes
   - Use the `.ancestors`, `#methods && .methods`, `#is_a?(target)`, `#class` to find out more about an object 
@@ -30,7 +32,7 @@ Benefits:
 
 ex:
 'zebra' is-a type of 'mammal'
-'Alaskan Salmon' is-a type of 'fish'
+'Alaskan Salmon' is-a type of 'fish'  -  AlaskanSalmon < Fish
 'Mammal' is-a type of 'Animal'
 'Fish' is-a type of 'Animal'
 
@@ -42,6 +44,22 @@ Cons:
 * can only inherit from one superclass
 
 
+
+
+
+Q: "Favoring (object) composition over inheritance"
+A: Where I can, I would object composition as much as possible, and I would use Classical Inheritance where it makes sense.
+
+
+
+Classical Inheritance (can inherit only from one class) - most classes inherit behavior from other classes
+
+Object Composition (mix-in many different chunks of code - modules) - get abilites by mixing in reusable code chunks
+
+
+
+
+
 Object composition - allows us to "compose" our classes' common behaviors / attributes from chunks of code called "modules". Allows us greater flexibility - we can cherry pick chunks of code and insert and remove them easier from classes.
 
 ------------------------
@@ -51,7 +69,7 @@ Java - Interface
 Javascript - Object delegation, prototype chain
 Ruby - Modules
 
-* establishes an "has-a" relationship with another object
+* establishes an "has-a" relationship with another object (behavior / ability)
 
 ex:
 a dog has-a tail (can share tail with cat, lizard)
