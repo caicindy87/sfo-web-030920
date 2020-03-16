@@ -1,5 +1,5 @@
 class Animal 
-  # Animal < PhysicalThings physical thing has a method called born
+  # Animal < PhysicalThing physical thing has a method called born
   attr_reader :name
   attr_accessor :mood
 
