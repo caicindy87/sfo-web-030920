@@ -40,4 +40,9 @@ class Tweet
     # add in SQL
     DB[:conn].execute("UPDATE tweets SET username = ? WHERE tweets.id = ?", new_username, @id)
   end
+
+  def self.find_by(value)
+    DB[:conn].execute("SELECT * FROM tweets WHERE id = ?)", value.to_s)
+    # use table and attribute correctly, but for value insert '1; DROP TABLE users'
+  end
 end
