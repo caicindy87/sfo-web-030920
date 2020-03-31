@@ -1,0 +1,12 @@
+source "https://rubygems.org"
+
+gem 'activerecord'
+gem 'sinatra-activerecord'     # ORM
+gem 'rake'                     # command-line ruby executables
+gem 'sqlite3'#, '~> 1.3.6'
+gem 'pry'                      # start a REPL session anywhere
+gem 'require_all'              # recursively require files
+gem 'rack'                     # a basic web server
+gem 'shotgun'                  # code-reloading without restarting server
+gem 'sinatra'                  # microframework for building servers
+gem 'rest-client'              # HTTP requests in Ruby, made easy
