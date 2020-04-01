@@ -14,7 +14,8 @@ class ChildController < ApplicationController
   # SHOW - route to show one child, find by ID
   get '/children/:id' do
     @child = Child.find(params[:id])
-    erb :show 
+    magic = erb(:show)
+    binding.pry 
   end
 
 

@@ -1,0 +1,15 @@
+<h1>Create a book</h1>
+
+<form action='/books' method="POST">
+
+  <input type='text' name='book[title]'>
+  <select name='book[author_id]'>
+    <% @authors.each do |a|%>
+      <option value=<%= a.id %>>
+        <%= a.name %>
+      </option>
+    <% end %>
+  </select>
+  <input type='submit' value='Create a book'>
+
+</form>
