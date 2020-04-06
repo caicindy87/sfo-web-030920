@@ -1,0 +1,27 @@
+<h1>Create a new cow</h1>
+
+<% if @cow.errors.any? %>
+	<ul>
+	<% @cow.errors.full_messages.each do |message| %>
+		<li><%= message%></li>
+	<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @cow do |f| %>
+	<div class="form-group">
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :spots %>
+		<%= f.number_field :spots, class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :farmer_id %>
+		<%= f.collection_select :farmer_id, @farmers, :id, :name, {}, { class: 'form-control'} %>
+	</div>
+	<%= f.submit "Create Cow", class: 'btn btn-primary' %>
+<% end %>
