@@ -1,0 +1,13 @@
+<h1>Welcome <%= @customer.name %></h1>
+
+<h2>Your reservations:</h2>
+
+<ul>
+<% @customer.reservations.each do |reservation| %>
+	<li>
+		<%= reservation.date.strftime("%Y-%m-%d") %> - 
+		Party Size: <%= reservation.party_size %> -
+		<%= link_to reservation.restaurant.name, reservation.restaurant %>
+	</li>
+<% end %>
+</ul>
