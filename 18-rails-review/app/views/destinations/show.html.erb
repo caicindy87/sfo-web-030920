@@ -1,0 +1,12 @@
+<h1><%= @destination.name%></h1>
+
+<% @destination.recent_post.each do |d| %>
+    <h2><%= d.title%></h2> <br>
+    <p><%= d.content%></p>
+<% end %>
+
+<h3>Most liked post </h3>
+<%= link_to @destination.featured_post.title, post_path(@destination.featured_post)%>
+
+<h4>Average age of the destination </h4>
+<%= @destination.avg_age%>

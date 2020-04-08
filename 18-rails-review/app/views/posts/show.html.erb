@@ -1,0 +1,8 @@
+<h1><%= @post.title %></h1>
+<p> <%= link_to @post.blogger.name, @post.blogger %></p>
+<p><%= link_to @post.destination.name, @post.destination %></p>
+<p>Current likes: <%= @post.likes %></p>
+<%= link_to 'Add like',  add_like_path(@post.id), {method: "PATCH"}%>
+<textarea >
+  <%= @post.content %>
+</textarea>
