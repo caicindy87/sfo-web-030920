@@ -1,0 +1,12 @@
+<h1>All Players</h1>
+
+<div>
+  <div>
+		<% @players.each do |player| %>
+			<div>
+				<img src="<%= player.image %>" alt="">
+				<%= link_to player.name, player %>
+			</div>
+		<% end %>
+  </div>
+</div>
