@@ -1,12 +1,27 @@
 <%= form_for @player do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name%>
+	<div class="form-group">
+		<%= f.label :name %>
+		<%= f.text_field :name, class: "form-control" %>
+	</div>
 
-	<%= f.label :score %>
-	<%= f.text_field :score%>
+	<div class="form-group">
+		<%= f.label :score %>
+		<%= f.text_field :score, class: "form-control" %>
+	</div>
 
-	<%= f.label :image %>
-	<%= f.text_field :image%>
+	<div class="form-group">
+		<%= f.label :image %>
+		<%= f.text_field :image, class: "form-control" %>
+	</div>
 
-	<%= f.submit "Create Player" %>
+	<%= f.submit "Create Player", class: "btn btn-primary" %>
 <% end %>
+
+<%# <form>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> %>

@@ -1,12 +1,20 @@
 <h1>All Players</h1>
 
-<div>
-  <div>
-		<% @players.each do |player| %>
-			<div>
-				<img src="<%= player.image %>" alt="">
-				<%= link_to player.name, player %>
-			</div>
-		<% end %>
-  </div>
+<div class="players">
+	<% @players.each do |player| %>
+		<div class="player">
+			<img src="<%= player.image %>" alt="">
+			<%= link_to player.name, player %>
+		</div>
+	<% end %>
 </div>
+
+
+<%# <div class="row players"> %>
+	<%# @players.each do |player| %>
+		<%# <div class="col-6 player"> %>
+			<%# <img src="<%= player.image %>" alt=""> %>
+			<%#= link_to player.name, player %>
+		<%# </div> %>
+	<%# end %>
+<%# </div> %>
