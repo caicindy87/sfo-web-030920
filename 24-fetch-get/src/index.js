@@ -4,18 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function fetchAllPokemon() {
-  console.log('fetching pokemon');
-  const url = 'http://localhost:3000/pokemon';
-
-  // fetch(url)
-  //   .then(function (resp) {
-  //     return resp.json();
-  //   })
-  //   .then(function (data) {
-  //     console.log(data);
-  //   });
-
-  fetch(url)
+  fetch('http://localhost:3000/pokemon')
     .then((resp) => resp.json())
     .then((data) => {
       appendPokemon(data);
@@ -40,36 +29,4 @@ function renderSinglePokemon(pokemon) {
 				</div>
 			</div>
 		</div>`;
-}
-
-// DIFFERENT TYPES OF FUNCTIONS
-// Function Expressions
-// const myFunctionExpression = () => {
-//   // function body
-//   return 2;
-// };
-
-// const myFunctionExpression = () => 2;
-
-// const myFunctionExpression = function () {
-//   // function body
-// };
-
-// // Function Declaration & named function
-// function myFunction() {
-//   // function body
-//   return 3;
-// }
-
-function listenToPokemonLogoClick() {
-  const pokemonLogo = document.querySelector('#pokemon-logo');
-  const textDiv = document.getElementsByClassName('pokemon-container')[0];
-  const pokemonTextTag = textDiv.querySelector('center');
-  // const pokemonText = document.getElementsByTagName('center')[0]
-
-  pokemonLogo.addEventListener('click', function () {
-    pokemonTextTag.textContent = 'Potato';
-    // pokemonTextTag.innerText = 'Potato';
-    // pokemonTextTag.innerHTML = 'Potato';
-  });
 }
