@@ -7,6 +7,34 @@ class Ticker extends Component {
     value: 0,
   };
 
+  componentDidMount() {
+    console.log('Starting the ticker');
+
+    const interval = setInterval(() => {
+      console.log('Running the ticker');
+
+      this.setState({
+        value: Math.floor(Math.random() * 100),
+      });
+    }, 1000);
+
+    this.setState({ interval: interval });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.value > prevState.value) {
+      this.setState({ color: 'green' });
+    } else if (this.state.value < prevState.value) {
+      this.setState({ color: 'red' });
+    }
+  }
+
+  componentWillUnmount() {
+    console.log('Unmounting');
+
+    clearInterval(this.state.interval);
+  }
+
   render() {
     return (
       <div className="box" style={{ color: this.state.color }}>
