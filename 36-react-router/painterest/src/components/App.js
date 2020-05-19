@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+
 import Navbar from './Navbar';
 import PaintingsContainer from './PaintingsContainer';
+import About from './About';
+import Login from './Login';
 
 class App extends Component {
   render() {
@@ -19,6 +23,9 @@ class App extends Component {
             <a href="/paintings" />
           </div>
         </div>
+
+        <Route exact={true} path="/" component={About} />
+        <Route path="/login" component={Login} />
 
         <PaintingsContainer />
       </div>

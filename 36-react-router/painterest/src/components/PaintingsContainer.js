@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import PaintingsList from './PaintingsList';
 import PaintingsNew from './PaintingsNew';
@@ -17,6 +18,7 @@ class PaintingsContainer extends React.Component {
   }
 
   componentDidMount() {
+    // setTimeout(() => {
     fetch('http://localhost:3001/api/v1/paintings/')
       .then((res) => res.json())
       .then((data) => {
@@ -24,6 +26,7 @@ class PaintingsContainer extends React.Component {
           paintings: data.slice(0, 20).sort((a, b) => b.votes - a.votes),
         });
       });
+    // }, 3000);
   }
 
   handleDelete(id) {
@@ -49,10 +52,28 @@ class PaintingsContainer extends React.Component {
   }
 
   render() {
+    const { paintings } = this.state;
+
     return (
-      <div>
-        <PaintingsList paintings={this.state.paintings} />
-      </div>
+      <Switch>
+        <Route path="/paintings/new" component={PaintingsNew} />
+        <Route
+          path="/paintings/:slug"
+          render={(routerProps) => {
+            const slug = routerProps.match.params.slug;
+            const painting = paintings.find((p) => p.slug === slug);
+
+            return painting ? <PaintingShow painting={painting} /> : 'Loading...';
+            // return <PaintingShow painting={painting} />;
+          }}
+        />
+        <Route
+          path="/paintings"
+          render={(routerProps) => (
+            <PaintingsList paintings={paintings} {...routerProps} />
+          )}
+        />
+      </Switch>
     );
   }
 }

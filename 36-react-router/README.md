@@ -54,7 +54,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
   - In one place only (top level)
   - Listens for when route changes & makes that info accessible
 - Route
-  - Conditionally render sa certain component based on what the route looks like
+  - Conditionally renders a certain component based on what the route looks like
 - Link
   - Changes the url we see in the browser, must have `to` prop
 - Switch

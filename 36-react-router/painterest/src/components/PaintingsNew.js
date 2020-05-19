@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class PaintingsNew extends Component {
   render() {
+    console.log(this.props);
     return (
       <form className="ui form">
         <div className="field">
