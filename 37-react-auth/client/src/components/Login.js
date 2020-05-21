@@ -19,6 +19,8 @@ class Login extends React.Component {
   };
 
   handleSubmit = (e) => {
+    e.preventDefault();
+
     api.auth.login(this.state.fields.username, this.state.fields.password).then((res) => {
       if (res.error) {
         this.setState({ error: true });
@@ -50,7 +52,7 @@ class Login extends React.Component {
               <label>Password</label>
               <input
                 name="password"
-                type="text"
+                type="password"
                 placeholder="password"
                 value={fields.password}
                 onChange={this.handleChange}

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  before_action :authorized
+
   def issue_token(user)
     JWT.encode({user_id: user.id}, 'secret', 'HS256')
   end
@@ -25,5 +27,9 @@ class ApplicationController < ActionController::API
 
   def logged_in?
     !!current_user
+  end
+
+  def authorized
+    render json: { message: "Please log in" }, status: 401 unless logged_in?
   end
 end

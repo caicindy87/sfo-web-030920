@@ -11,14 +11,15 @@ class PaintingContainer extends React.Component {
     super(props);
 
     this.state = {
-      paintings: []
+      paintings: [],
     };
   }
 
   componentDidMount() {
     const token = localStorage.getItem('token');
+
     if (token) {
-      api.paintings.getPaintings().then(paintings => {
+      api.paintings.getPaintings().then((paintings) => {
         this.setState({ paintings: this.sortPaintings(paintings) });
       });
     } else {
@@ -30,14 +31,14 @@ class PaintingContainer extends React.Component {
     return paintings.sort((a, b) => b.votes - a.votes);
   }
 
-  handleDelete = id => {
-    this.setState(prevState => ({
-      paintings: prevState.paintings.filter(p => p.id !== id)
+  handleDelete = (id) => {
+    this.setState((prevState) => ({
+      paintings: prevState.paintings.filter((p) => p.id !== id),
     }));
   };
 
-  handleVote = id => {
-    const updatedPaintings = this.state.paintings.map(p => {
+  handleVote = (id) => {
+    const updatedPaintings = this.state.paintings.map((p) => {
       if (p.id !== id) {
         return p;
       } else {
@@ -45,7 +46,7 @@ class PaintingContainer extends React.Component {
       }
     });
     this.setState({
-      paintings: this.sortPaintings(updatedPaintings)
+      paintings: this.sortPaintings(updatedPaintings),
     });
   };
 
@@ -62,7 +63,7 @@ class PaintingContainer extends React.Component {
               // find the one that its slug matches
 
               const painting = this.state.paintings.find(
-                p => p.slug === match.params.slug
+                (p) => p.slug === match.params.slug
               );
               return painting ? (
                 <PaintingShow painting={painting} />
