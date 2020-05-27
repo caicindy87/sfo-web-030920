@@ -1,4 +1,4 @@
-# WebSockets with a Rails API and React frontend (ActionCable)
+# WebSockets with a Rails API and React Frontend (ActionCable)
 
 ## What are WebSockets?
 
